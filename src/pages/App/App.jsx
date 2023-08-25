@@ -25,6 +25,10 @@ export default function App() {
         :
         <AuthPage setUser={setUser} />
       }
+
+      <div>
+        <h1>Expense Tracker</h1>
+      </div>
     </main>
   );
 }
