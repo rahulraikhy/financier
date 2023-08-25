@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
+import Graph from '../../components/Graphs/Graph';
 
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
@@ -26,8 +27,14 @@ export default function App() {
         <AuthPage setUser={setUser} />
       }
 
-      <div>
-        <h1>Expense Tracker</h1>
+      <div className='App'>
+        <div className='container mx-auto max-w-6xl text-center drop-shadow-lg text-gray-800'>
+          <h1 className='text-4xl py-8 mb-10 bg-slate-800 text-white rounded'>Expense Tracker</h1>
+
+          <div className='grid md:grid-cols-2 gap-4'>
+            <Graph></Graph>
+          </div>
+        </div>
       </div>
     </main>
   );
