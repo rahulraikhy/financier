@@ -8,4 +8,7 @@ router.post('/', usersCtrl.create);
 // POST /api/users/login
 router.post('/login', usersCtrl.login);
 
+router.route('/api/users/categories')
+    .get((req, res) => res.json("Get Request from Categories"));
+
 module.exports = router;
