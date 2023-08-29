@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import List from '../Lists/List';
 
 export default function Form() {
 
@@ -34,6 +35,7 @@ export default function Form() {
                     </div>
                 </div>
             </form>
+            <List></List>
         </div>
     )
 }
