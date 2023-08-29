@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const categories_model = newSchema({
+const categories_model = new Schema({
     type: {
         type: String,
         default: "Investment"
@@ -12,7 +12,7 @@ const categories_model = newSchema({
     }
 })
 
-const transaction_model = newSchema({
+const transaction_model = new Schema({
     name: {
         type: String,
         default: "Anonymous"
@@ -33,8 +33,7 @@ const transaction_model = newSchema({
 const Categories = mongoose.model("categories", categories_model)
 const Transaction = mongoose.model("transaction", transaction_model)
 
-exports.default = Transaction;
 module.exports = {
     Categories,
     Transaction
-}
+};
