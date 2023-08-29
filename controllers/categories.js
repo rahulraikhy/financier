@@ -65,6 +65,7 @@ async function get_Labels(req, res) {
             $unwind: "$categories_info"
         }
     ]).then(result => {
+        let data = result.map(value => Object.assign({}, { _id: value.id, name: value.name, type: value.type, amount: value.amount, color: value.categories_info["color"] }));
         res.json(data);
     }).catch(error =>
         res.status(400).json("Look up Collection Error"));
