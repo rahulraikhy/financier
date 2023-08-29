@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import Graph from '../../components/Graphs/Graph';
+import Form from '../../components/Forms/Form';
 
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
@@ -33,6 +34,7 @@ export default function App() {
 
           <div className='grid md:grid-cols-2 gap-4'>
             <Graph></Graph>
+            <Form></Form>
           </div>
         </div>
       </div>
