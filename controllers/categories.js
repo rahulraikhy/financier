@@ -1,5 +1,5 @@
-const { model } = require("mongoose");
-const CategoriesModel = require("../models/model");
+const { Categories } = require("../models/model");
+const { Transaction } = require("../models/model");
 
 async function create_Categories(req, res) {
     const Create = new CategoriesModel.Categories({
@@ -14,7 +14,7 @@ async function create_Categories(req, res) {
 }
 
 async function get_Categories(req, res) {
-    let data = await model.Categories.find({})
+    let data = await Categories.find({})
 
     let filter = await data.map(value => Object.assign({}, { type: value.type, color: value.color }));
     return res.json(filter);
@@ -40,13 +40,13 @@ async function create_Transaction(req, res) {
 }
 
 async function get_Transaction(req, res) {
-    let data = await model.Transaction.find({});
+    let data = await Transaction.find({});
     return res.json(data);
 }
 
 async function delete_Transaction(req, res) {
     if (!req.body) return res.status(400).json({ message: "Request body not Found" });
-    await model.Transaction.deleteOne(req.body, function (err) {
+    await Transaction.deleteOne(req.body, function (err) {
         if (!err) res.json("Record Deleted!");
     }).clone().catch(function (err) { res.json("Error while deleting Transaction Record") });
 }

@@ -42,7 +42,7 @@
 }
 
 /* Focus Styles */
-.form-input:focus {
+.form-input: focus {
   outline: none;
   border-color: rgba(59, 130, 246, 0.5);
   ring-offset-width: 2px;
